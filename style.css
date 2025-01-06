@@ -47,7 +47,7 @@ body {
     bottom: 40px; /* Distance doublée par rapport au bas de l'écran */
     left: 50%; /* Centre horizontalement */
     transform: translateX(-50%); /* Ajuste le centrage horizontal */
-    font-size: 1rem; /* Taille par défaut */
+    font-size: clamp(0.8rem, 1vw, 1rem); /* Taille fluide et contrôlée */
     font-weight: 400;
     color: white;
     text-transform: uppercase;
@@ -61,7 +61,8 @@ body {
 /* Ajustement dynamique pour les écrans étroits */
 @media (max-width: 768px) {
     .tagline {
-        font-size: calc((100vw - 40px) / 20); /* Réduit dynamiquement si la fenêtre devient étroite */
+        font-size: clamp(0.6rem, 3vw, 0.9rem); /* Transition fluide pour mobile */
         bottom: 30px; /* Réduit légèrement la marge en bas sur mobile */
     }
+}
 
