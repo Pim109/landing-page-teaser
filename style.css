@@ -11,10 +11,10 @@ body {
     height: 100vh;
     overflow: hidden;
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    justify-content: space-between;
     align-items: center;
     text-align: center;
-    background-color: black; /* Fallback si la vidéo ne charge pas */
 }
 
 /* Conteneur pour les vidéos */
@@ -35,56 +35,35 @@ body {
     object-position: center;
 }
 
-/* Cacher la vidéo mobile par défaut */
-.video-mobile {
-    display: none;
-}
-
-/* Contenu principal centré */
-.content {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-}
-
 /* Logo centré */
 .logo {
-    width: 15vw; /* Largeur adaptative basée sur la largeur de la fenêtre */
-    max-width: 180px; /* Taille maximale */
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 20vw; /* Largeur adaptative */
+    max-width: 200px; /* Taille maximale */
     min-width: 100px; /* Taille minimale */
-    height: auto; /* Garde les proportions du logo */
-    margin-bottom: 30px; /* Espacement avec le texte */
+    height: auto; /* Garde les proportions */
 }
 
-/* Texte tagline */
+/* Texte en bas (pied de page) */
 .tagline {
-    font-size: 1.5rem; /* Taille plus grande */
-    font-weight: 400; /* Regular */
-    color: white; /* Texte blanc */
+    font-size: 1.2rem;
+    font-weight: 400;
+    color: white;
     text-transform: uppercase;
-    letter-spacing: 0.2em; /* Espacement des lettres */
+    letter-spacing: 0.1em;
+    margin-bottom: 20px;
 }
 
 /* Responsive Design pour mobile */
 @media (max-width: 768px) {
-    .video-desktop {
-        display: none;
-    }
-    .video-mobile {
-        display: block;
-    }
     .logo {
-        width: 25vw; /* Taille réduite pour mobile */
-        max-width: 120px;
+        width: 30vw; /* Réduit la taille du logo sur mobile */
+        max-width: 150px;
     }
     .tagline {
-        font-size: 1rem; /* Taille du texte plus petite */
-        letter-spacing: 0.1em; /* Moins d'espacement sur mobile */
+        font-size: 1rem; /* Texte plus petit sur mobile */
+        margin-bottom: 15px; /* Réduit l'espacement en bas */
     }
 }
