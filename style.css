@@ -39,7 +39,7 @@ body {
     top: 50%; /* Centre verticalement */
     left: 50%; /* Centre horizontalement */
     transform: translate(-50%, -50%);
-    width: clamp(14rem, 60vw, 38rem); /* Taille fluide sur desktop */
+    width: clamp(17rem, 60vw, 38rem); /* Taille minimale : 17rem, taille fluide, maximale : 38rem */
     height: auto; /* Conserve les proportions */
     z-index: 2; /* Assure que le logo reste au-dessus de la vidéo */
 }
@@ -64,9 +64,6 @@ body {
 
 /* Ajustements spécifiques pour mobile */
 @media (max-width: 768px) {
-    .logo {
-        width: 17rem; /* Taille fixe pour mobile */
-    }
     .tagline {
         bottom: 30px; /* Réduit légèrement la marge en bas */
         font-size: clamp(0.7rem, 1vw, 0.9rem); /* Ajuste la taille sur mobile */
