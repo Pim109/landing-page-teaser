@@ -8,7 +8,7 @@
 /* Configuration globale */
 body {
     font-family: 'Source Code Pro', monospace;
-    height: 100vh;
+    height: 0.95rem;
     overflow: hidden;
     position: relative; /* Nécessaire pour les positions absolues */
     display: flex;
@@ -47,10 +47,10 @@ body {
 /* Texte en pied de page */
 .tagline {
     position: absolute;
-    bottom: 20px; /* Distance par rapport au bas de l'écran */
+    bottom: 40px; /* Distance par rapport au bas de l'écran */
     left: 50%; /* Centre horizontalement */
     transform: translateX(-50%); /* Ajuste le centrage horizontal */
-    font-size: 1rem; /* Taille par défaut */
+    font-size: 0.95rem; /* Taille par défaut */
     font-weight: 400;
     color: white;
     text-transform: uppercase;
