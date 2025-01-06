@@ -44,7 +44,7 @@ body {
 /* Texte en pied de page */
 .tagline {
     position: absolute;
-    bottom: 20px; /* Distance par rapport au bas de l'écran */
+    bottom: 40px; /* Distance par rapport au bas de l'écran */
     left: 50%; /* Centre horizontalement */
     transform: translateX(-50%); /* Ajuste le centrage horizontal */
     font-size: 0.8vw; /* Taille fluide basée sur la largeur */
