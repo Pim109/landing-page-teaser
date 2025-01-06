@@ -68,7 +68,7 @@ html, body {
 /* Ajustements spécifiques pour mobile */
 @media (max-width: 768px) {
     .tagline {
-        bottom: 35px; /* Marge légèrement réduite pour mobile */
+        bottom: 30px; /* Marge légèrement réduite pour mobile */
         font-size: 0.8rem; /* Fixe une taille adaptée au mobile */
     }
 }
