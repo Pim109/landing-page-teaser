@@ -7,15 +7,12 @@
 
 /* Corps principal */
 html, body {
-    height: 100%; /* Assure une hauteur totale de la fenêtre */
+    height: 100%; /* Fixe la hauteur totale à 100% de la fenêtre */
+    margin: 0;
+    padding: 0;
     overflow: hidden; /* Empêche les débordements */
-    margin: 0; /* Supprime les marges globales */
-    display: flex; /* Centrage vertical et horizontal */
-    flex-direction: column; /* Empile les éléments verticalement */
-    justify-content: center; /* Centre le contenu verticalement */
-    align-items: center; /* Centre le contenu horizontalement */
-    position: relative;
-    font-family: 'Source Code Pro', monospace; /* Applique la font à tout le contenu */
+    position: relative; /* Nécessaire pour les enfants absolus */
+    font-family: 'Source Code Pro', monospace; /* Applique la font globale */
 }
 
 /* Conteneur pour les vidéos */
@@ -25,7 +22,7 @@ html, body {
     left: 0;
     width: 100%;
     height: 100%;
-    z-index: -1; /* Derrière les autres éléments */
+    z-index: -1; /* Derrière tous les éléments */
     overflow: hidden;
 }
 
@@ -34,35 +31,47 @@ html, body {
     height: 100%;
     object-fit: cover; /* Remplit l'écran sans déformer */
     object-position: center;
-    background: black; /* Fallback en cas d'erreur de chargement */
+    background: black; /* Fallback si la vidéo ne charge pas */
 }
 
 /* Logo centré */
 .logo {
-    position: relative; /* Centrage géré par flexbox */
-    width: clamp(17rem, 60vw, 38rem); /* Taille fluide, minimale : 17rem, maximale : 38rem */
+    position: absolute;
+    top: 50%; /* Centre verticalement */
+    left: 50%; /* Centre horizontalement */
+    transform: translate(-50%, -50%); /* Ajuste le centrage */
+    width: clamp(17rem, 60vw, 38rem); /* Taille fluide : min 17rem, max 38rem */
     height: auto; /* Conserve les proportions */
-    z-index: 2; /* Assure que le logo reste au-dessus de la vidéo */
-    margin-bottom: 20px; /* Espacement pour la tagline */
+    z-index: 2; /* Au-dessus de la vidéo */
 }
 
 /* Texte en pied de page */
 .tagline {
     position: absolute;
-    bottom: 20px; /* Toujours en bas de l'écran */
+    bottom: 20px; /* Place la tagline 20px au-dessus du bord inférieur */
     left: 50%; /* Centre horizontalement */
-    transform: translateX(-50%); /* Ajuste le centrage horizontal */
-    font-size: clamp(0.8rem, 1vw, 1rem); /* Taille fluide et contrôlée */
+    transform: translateX(-50%); /* Ajuste le centrage */
+    font-size: clamp(0.8rem, 1vw, 1rem); /* Taille fluide */
     font-weight: 400;
     color: white;
     text-transform: uppercase;
     letter-spacing: 0.05em;
     text-align: center; /* Centre le texte */
-    white-space: nowrap; /* Empêche le texte de passer à la ligne */
-    max-width: calc(100% - 40px); /* Maintient une marge de 20px sur les côtés */
-    z-index: 3; /* Assure que la tagline est au-dessus de tout */
-    visibility: visible; /* Force la visibilité */
-    opacity: 1; /* Assure la visibilité complète */
-    display: block; /* Rend l'élément visible */
-    font-family: 'Source Code Pro', monospace; /* Applique la font explicitement */
+    white-space: nowrap; /* Empêche le retour à la ligne */
+    max-width: calc(100% - 40px); /* Marge latérale de 20px */
+    z-index: 3; /* Au-dessus de la vidéo */
+    visibility: visible; /* Assure la visibilité */
+    opacity: 1; /* Assure l'opacité complète */
+    display: block; /* Affiche la tagline */
+}
+
+/* Ajustements spécifiques pour mobile */
+@media (max-width: 768px) {
+    .logo {
+        width: 17rem; /* Taille fixe du logo sur mobile */
+    }
+    .tagline {
+        bottom: 10px; /* Réduit la marge en bas sur mobile */
+        font-size: 0.8rem; /* Fixe une taille adaptée au mobile */
+    }
 }
