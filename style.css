@@ -47,7 +47,7 @@ body {
 /* Texte en pied de page */
 .tagline {
     position: absolute;
-    bottom: 40px; /* Distance doublée par rapport au bas */
+    bottom: 40px; /* Distance par rapport au bas */
     left: 50%; /* Centre horizontalement */
     transform: translateX(-50%); /* Ajuste le centrage horizontal */
     font-size: clamp(0.8rem, 1vw, 1rem); /* Taille fluide et contrôlée */
@@ -58,8 +58,10 @@ body {
     text-align: center;
     white-space: nowrap; /* Empêche le texte de passer à la ligne */
     max-width: calc(100% - 40px); /* Limite la largeur */
-    overflow: hidden;
-    z-index: 3; /* Assure que la tagline est au-dessus de tout */
+    z-index: 10; /* S’assure que la tagline est au-dessus de tout */
+    visibility: visible; /* Forcer la visibilité */
+    opacity: 1; /* S’assure qu'elle est entièrement visible */
+    display: block; /* S’assure qu'elle est affichée */
 }
 
 /* Ajustements spécifiques pour mobile */
