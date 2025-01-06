@@ -47,7 +47,7 @@ body {
     bottom: 40px; /* Distance doublée par rapport au bas de l'écran */
     left: 50%; /* Centre horizontalement */
     transform: translateX(-50%); /* Ajuste le centrage horizontal */
-    font-size: 1.5rem; /* Taille par défaut */
+    font-size: 1rem; /* Taille par défaut */
     font-weight: 400;
     color: white;
     text-transform: uppercase;
