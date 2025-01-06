@@ -65,6 +65,6 @@ body {
     }
     .tagline {
         font-size: 1rem; /* Réduit la taille du texte */
-        bottom: 15px; /* Réduit l'espace en bas */
+        bottom: 30px; /* Réduit l'espace en bas */
     }
 }
