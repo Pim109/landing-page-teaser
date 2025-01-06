@@ -14,6 +14,7 @@ body {
     justify-content: center;
     align-items: center;
     text-align: center;
+    background-color: black; /* Fallback si la vidéo ne charge pas */
 }
 
 /* Conteneur pour les vidéos */
@@ -39,34 +40,38 @@ body {
     display: none;
 }
 
-/* Centrer le contenu principal */
+/* Contenu principal centré */
 .content {
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
     text-align: center;
 }
 
-/* Logo */
+/* Logo centré */
 .logo {
-    width: 20vw; /* Largeur adaptative */
-    max-width: 200px; /* Limite maximale */
-    min-width: 80px; /* Limite minimale */
-    margin-bottom: 20px; /* Espacement entre le logo et la tagline */
+    width: 15vw; /* Largeur adaptative basée sur la largeur de la fenêtre */
+    max-width: 180px; /* Taille maximale */
+    min-width: 100px; /* Taille minimale */
+    height: auto; /* Garde les proportions du logo */
+    margin-bottom: 30px; /* Espacement avec le texte */
 }
 
-/* Texte en bas */
+/* Texte tagline */
 .tagline {
-    font-size: 1.2rem;
-    font-weight: 400;
-    color: white;
+    font-size: 1.5rem; /* Taille plus grande */
+    font-weight: 400; /* Regular */
+    color: white; /* Texte blanc */
     text-transform: uppercase;
-    letter-spacing: 0.1em;
-    margin-top: 20px;
+    letter-spacing: 0.2em; /* Espacement des lettres */
 }
 
-/* Responsive pour mobile */
+/* Responsive Design pour mobile */
 @media (max-width: 768px) {
     .video-desktop {
         display: none;
@@ -75,10 +80,11 @@ body {
         display: block;
     }
     .logo {
-        width: 30vw; /* Réduit la taille du logo sur mobile */
-        max-width: 150px;
+        width: 25vw; /* Taille réduite pour mobile */
+        max-width: 120px;
     }
     .tagline {
-        font-size: 1rem; /* Texte plus petit sur mobile */
+        font-size: 1rem; /* Taille du texte plus petite */
+        letter-spacing: 0.1em; /* Moins d'espacement sur mobile */
     }
 }
