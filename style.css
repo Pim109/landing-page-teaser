@@ -29,6 +29,7 @@ body {
     height: 100%;
     object-fit: cover; /* Remplit l'écran sans déformer */
     object-position: center;
+    z-index: -1;
 }
 
 /* Logo centré */
@@ -39,6 +40,7 @@ body {
     transform: translate(-50%, -50%);
     width: clamp(14rem, 60vw, 38rem); /* Taille fluide basée sur l'écran */
     height: auto; /* Conserve les proportions */
+    z-index: 2; /* Assure que le logo reste au-dessus de la vidéo */
 }
 
 /* Texte en pied de page */
@@ -56,13 +58,5 @@ body {
     white-space: nowrap; /* Empêche le texte de passer à la ligne */
     max-width: calc(100% - 40px); /* Maintient une marge de 20px sur les côtés */
     overflow: hidden; /* Coupe le texte si la fenêtre devient trop petite */
+    z-index: 2; /* Assure que la tagline reste au-dessus de la vidéo */
 }
-
-/* Ajustement dynamique pour les écrans étroits */
-@media (max-width: 768px) {
-    .tagline {
-        font-size: clamp(0.6rem, 3vw, 0.9rem); /* Transition fluide pour mobile */
-        bottom: 30px; /* Réduit légèrement la marge en bas sur mobile */
-    }
-}
-
