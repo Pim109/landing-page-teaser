@@ -44,14 +44,17 @@ body {
 /* Texte en pied de page */
 .tagline {
     position: absolute;
-    bottom: 40px; /* Distance par rapport au bas de l'écran */
+    bottom: 20px; /* Distance par rapport au bas de l'écran */
     left: 50%; /* Centre horizontalement */
     transform: translateX(-50%); /* Ajuste le centrage horizontal */
-    font-size: 0.8vw; /* Taille fluide basée sur la largeur */
+    font-size: clamp(0.8rem, calc((100% - 40px) / 20), 1.5rem); /* Taille fixe, qui se réduit si nécessaire */
     font-weight: 400;
     color: white;
     text-transform: uppercase;
     letter-spacing: 0.05em;
     text-align: center; /* Centre le texte */
-    white-space: nowrap; /* Empêche le passage à la ligne */
+    white-space: nowrap; /* Empêche le texte de passer à la ligne */
+    max-width: calc(100% - 40px); /* Maintient une marge raisonnable sur les côtés */
+    overflow: hidden; /* Coupe le texte si la fenêtre devient trop petite */
 }
+
