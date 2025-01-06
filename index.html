@@ -4,25 +4,22 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Crealab Teaser</title>
-    <!-- Préchargement pour les polices Google Fonts -->
+    <!-- Préchargement des polices Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <!-- Lien vers Source Code Pro -->
-    <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@200..900&display=swap" rel="stylesheet">
+    <!-- Lien vers le CSS -->
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <!-- Conteneur de la vidéo -->
     <div class="video-container">
-        <!-- Vidéo Desktop -->
-        <video class="video-desktop" autoplay muted loop>
+        <video autoplay muted playsinline loop>
             <source src="assets/background-desktop.mp4" type="video/mp4">
-        </video>
-        <!-- Vidéo Mobile -->
-        <video class="video-mobile" autoplay muted loop>
-            <source src="assets/background-mobile.mp4" type="video/mp4">
         </video>
     </div>
 
+    <!-- Contenu principal -->
     <div class="content">
         <img src="assets/logo.svg" alt="Crealab logo" class="logo">
         <p class="tagline">COMMUNICATION & INNOVATION — BIENTÔT</p>
