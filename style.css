@@ -39,49 +39,7 @@ body {
     display: none;
 }
 
-/* Contenu principal */
+/* Centrer le contenu principal */
 .content {
-    position: relative;
-    z-index: 1;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    height: 100%;
-}
-
-/* Logo */
-.logo {
-    width: 20vw; /* Adaptatif à la largeur de la fenêtre */
-    max-width: 200px; /* Limite maximale */
-    min-width: 80px; /* Limite minimale */
-}
-
-/* Texte en bas */
-.tagline {
-    font-family: 'Source Code Pro', monospace;
-    font-optical-sizing: auto;
-    font-weight: 400; /* Regular */
-    font-size: 1.2rem;
-    color: white;
-    text-transform: uppercase;
-    letter-spacing: 0.1em;
-}
-
-/* Responsive pour mobile */
-@media (max-width: 768px) {
-    .video-desktop {
-        display: none;
-    }
-    .video-mobile {
-        display: block;
-    }
-    .logo {
-        width: 30vw; /* Taille réduite sur mobile */
-        max-width: 150px;
-    }
-    .tagline {
-        font-size: 1rem; /* Texte plus petit sur mobile */
-        font-weight: 300; /* Poids plus léger pour mobile */
-    }
-}
+    position: absolute;
+    top: 
