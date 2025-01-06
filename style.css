@@ -15,6 +15,7 @@ html, body {
     justify-content: center; /* Centre le contenu verticalement */
     align-items: center; /* Centre le contenu horizontalement */
     position: relative;
+    font-family: 'Source Code Pro', monospace; /* Applique la font à tout le contenu */
 }
 
 /* Conteneur pour les vidéos */
@@ -63,4 +64,5 @@ html, body {
     visibility: visible; /* Force la visibilité */
     opacity: 1; /* Assure la visibilité complète */
     display: block; /* Rend l'élément visible */
+    font-family: 'Source Code Pro', monospace; /* Applique la font explicitement */
 }
