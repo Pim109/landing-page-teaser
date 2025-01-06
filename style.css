@@ -1,0 +1,87 @@
+/* Reset des marges et paddings */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Configuration globale */
+body {
+    font-family: 'Source Code Pro', monospace;
+    height: 100vh;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+/* Conteneur pour les vidéos */
+.video-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    overflow: hidden;
+}
+
+.video-container video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Remplit l'écran sans déformer */
+    object-position: center;
+}
+
+/* Cacher la vidéo mobile par défaut */
+.video-mobile {
+    display: none;
+}
+
+/* Contenu principal */
+.content {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+}
+
+/* Logo */
+.logo {
+    width: 20vw; /* Adaptatif à la largeur de la fenêtre */
+    max-width: 200px; /* Limite maximale */
+    min-width: 80px; /* Limite minimale */
+}
+
+/* Texte en bas */
+.tagline {
+    font-family: 'Source Code Pro', monospace;
+    font-optical-sizing: auto;
+    font-weight: 400; /* Regular */
+    font-size: 1.2rem;
+    color: white;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+}
+
+/* Responsive pour mobile */
+@media (max-width: 768px) {
+    .video-desktop {
+        display: none;
+    }
+    .video-mobile {
+        display: block;
+    }
+    .logo {
+        width: 30vw; /* Taille réduite sur mobile */
+        max-width: 150px;
+    }
+    .tagline {
+        font-size: 1rem; /* Texte plus petit sur mobile */
+        font-weight: 300; /* Poids plus léger pour mobile */
+    }
+}
