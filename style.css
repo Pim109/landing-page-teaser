@@ -39,7 +39,7 @@ body {
     top: 50%; /* Centre verticalement */
     left: 50%; /* Centre horizontalement */
     transform: translate(-50%, -50%);
-    width: clamp(14rem, 60vw, 38rem); /* Taille fluide */
+    width: clamp(14rem, 60vw, 38rem); /* Taille fluide sur desktop */
     height: auto; /* Conserve les proportions */
     z-index: 2; /* Assure que le logo reste au-dessus de la vidéo */
 }
@@ -47,29 +47,28 @@ body {
 /* Texte en pied de page */
 .tagline {
     position: absolute;
-    bottom: 40px; /* Distance par rapport au bas */
+    bottom: 40px; /* Distance doublée par rapport au bas */
     left: 50%; /* Centre horizontalement */
     transform: translateX(-50%); /* Ajuste le centrage horizontal */
-    font-size: clamp(0.8rem, 1vw, 1rem); /* Taille fluide */
+    font-size: clamp(0.8rem, 1vw, 1rem); /* Taille fluide et contrôlée */
     font-weight: 400;
     color: white;
     text-transform: uppercase;
     letter-spacing: 0.05em;
-    text-align: center; /* Centre le texte */
+    text-align: center;
     white-space: nowrap; /* Empêche le texte de passer à la ligne */
     max-width: calc(100% - 40px); /* Limite la largeur */
+    overflow: hidden;
     z-index: 3; /* Assure que la tagline est au-dessus de tout */
-    visibility: visible; /* S’assure que la tagline est affichée */
-    opacity: 1; /* Rend la tagline visible */
 }
 
-/* Ajustements spécifiques aux téléphones */
+/* Ajustements spécifiques pour mobile */
 @media (max-width: 768px) {
     .logo {
-        width: clamp(10rem, 50vw, 24rem); /* Réduit la taille du logo sur mobile */
+        width: 17rem; /* Taille fixe pour mobile */
     }
     .tagline {
-        bottom: 30px; /* Réduit l'espacement en bas */
+        bottom: 30px; /* Réduit légèrement la marge en bas */
         font-size: clamp(0.7rem, 1vw, 0.9rem); /* Ajuste la taille sur mobile */
     }
 }
