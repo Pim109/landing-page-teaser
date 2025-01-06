@@ -6,10 +6,14 @@
 }
 
 /* Corps principal */
-body {
-    font-family: 'Source Code Pro', monospace;
-    height: 100vh;
-    overflow: hidden;
+html, body {
+    height: 100%; /* Assure une hauteur totale de la fenêtre */
+    overflow: hidden; /* Empêche les débordements */
+    margin: 0; /* Supprime les marges globales */
+    display: flex; /* Centrage vertical et horizontal */
+    flex-direction: column; /* Empile les éléments verticalement */
+    justify-content: center; /* Centre le contenu verticalement */
+    align-items: center; /* Centre le contenu horizontalement */
     position: relative;
 }
 
@@ -34,19 +38,17 @@ body {
 
 /* Logo centré */
 .logo {
-    position: absolute;
-    top: 50%; /* Centre verticalement */
-    left: 50%; /* Centre horizontalement */
-    transform: translate(-50%, -50%);
+    position: relative; /* Centrage géré par flexbox */
     width: clamp(17rem, 60vw, 38rem); /* Taille fluide, minimale : 17rem, maximale : 38rem */
     height: auto; /* Conserve les proportions */
     z-index: 2; /* Assure que le logo reste au-dessus de la vidéo */
+    margin-bottom: 20px; /* Espacement pour la tagline */
 }
 
 /* Texte en pied de page */
 .tagline {
     position: absolute;
-    bottom: 40px; /* Distance par rapport au bas */
+    bottom: 20px; /* Toujours en bas de l'écran */
     left: 50%; /* Centre horizontalement */
     transform: translateX(-50%); /* Ajuste le centrage horizontal */
     font-size: clamp(0.8rem, 1vw, 1rem); /* Taille fluide et contrôlée */
@@ -60,13 +62,5 @@ body {
     z-index: 3; /* Assure que la tagline est au-dessus de tout */
     visibility: visible; /* Force la visibilité */
     opacity: 1; /* Assure la visibilité complète */
-    display: block; /* S’assure que la tagline est affichée */
-}
-
-/* Ajustements spécifiques pour mobile */
-@media (max-width: 768px) {
-    .tagline {
-        bottom: 20px; /* Réduit légèrement la marge pour mobile */
-        font-size: 0.8rem; /* Taille fixe pour mobile */
-    }
+    display: block; /* Rend l'élément visible */
 }
