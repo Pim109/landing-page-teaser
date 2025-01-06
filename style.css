@@ -1,3 +1,50 @@
+/* Réinitialisation des marges et paddings */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Corps principal */
+html, body {
+    height: 100%; /* Fixe la hauteur totale à 100% de la fenêtre */
+    margin: 0;
+    padding: 0;
+    overflow: hidden; /* Empêche les débordements */
+    position: relative; /* Nécessaire pour les enfants absolus */
+    font-family: 'Source Code Pro', monospace; /* Applique la font globale */
+}
+
+/* Conteneur pour les vidéos */
+.video-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1; /* Derrière tous les éléments */
+    overflow: hidden;
+}
+
+.video-container video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Remplit l'écran sans déformer */
+    object-position: center;
+    background: black; /* Fallback si la vidéo ne charge pas */
+}
+
+/* Logo centré */
+.logo {
+    position: absolute;
+    top: 50%; /* Centre verticalement */
+    left: 50%; /* Centre horizontalement */
+    transform: translate(-50%, -50%); /* Ajuste le centrage */
+    width: clamp(17rem, 60vw, 38rem); /* Taille fluide : min 17rem, max 38rem */
+    height: auto; /* Conserve les proportions */
+    z-index: 2; /* Au-dessus de la vidéo */
+}
+
 /* Texte en pied de page */
 .tagline {
     position: absolute;
