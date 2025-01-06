@@ -46,33 +46,35 @@ body {
 /* Texte en pied de page */
 .tagline {
     position: absolute;
-    bottom: 40px; /* Position en bas */
+    bottom: 20px; /* Réduit la distance par rapport au bas pour mobile */
     left: 50%; /* Centre horizontalement */
     transform: translateX(-50%); /* Ajuste le centrage horizontal */
-    font-size: clamp(0.8rem, 1vw, 1rem); /* Taille fluide et contrôlée */
+    font-size: clamp(0.7rem, 1vw, 0.9rem); /* Ajuste la taille pour mobile */
     font-weight: 400;
     color: white;
     text-transform: uppercase;
     letter-spacing: 0.05em;
     text-align: center; /* Centre le texte */
     white-space: nowrap; /* Empêche le texte de passer à la ligne */
-    max-width: calc(100% - 40px); /* Maintient une marge de 20px sur les côtés */
+    max-width: calc(100% - 40px); /* Limite la largeur */
     z-index: 3; /* Assure que la tagline est au-dessus de tout */
     visibility: visible; /* Force la visibilité */
-    opacity: 1; /* S’assure que la tagline est affichée */
-    display: block; /* S’assure que la tagline est affichée */
+    opacity: 1; /* Assure la visibilité complète */
+    display: block; /* Rend l'élément visible */
 }
 
-/* Ajustements spécifiques pour mobile */
-@media (max-width: 768px) {
-    .logo {
-        width: 17rem; /* Taille fixe pour mobile */
-    }
+/* Ajustements spécifiques pour mode portrait (mobile) */
+@media (max-width: 768px) and (orientation: portrait) {
     .tagline {
-        bottom: 30px; /* Réduit légèrement la marge en bas */
-        font-size: clamp(0.7rem, 1vw, 0.9rem); /* Ajuste la taille sur mobile */
-        visibility: visible; /* Assure que la tagline est visible */
-        opacity: 1; /* Assure la visibilité complète */
-        display: block; /* Garde le texte affiché */
+        bottom: 10px; /* Réduit davantage la marge pour les petits écrans */
+        font-size: 0.7rem; /* Réduit légèrement la taille pour s'adapter */
+    }
+}
+
+/* Ajustements spécifiques pour mode paysage (mobile) */
+@media (max-width: 768px) and (orientation: landscape) {
+    .tagline {
+        bottom: 20px; /* Distance standard pour mode paysage */
+        font-size: clamp(0.8rem, 1vw, 1rem); /* Taille normale pour paysage */
     }
 }
