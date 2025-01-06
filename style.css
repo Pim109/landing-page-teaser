@@ -36,20 +36,22 @@ body {
     position: absolute;
     top: 50%; /* Centre verticalement */
     left: 50%; /* Centre horizontalement */
-    transform: translate(-50%, -50%); /* Ajuste le centrage */
-    width: clamp(10rem, 25vw, 20rem); /* Taille fluide entre mobile et desktop */
+    transform: translate(-50%, -50%);
+    width: clamp(14rem, 60vw, 38rem); /* Taille fluide basée sur l'écran */
     height: auto; /* Conserve les proportions */
 }
 
 /* Texte en pied de page */
 .tagline {
     position: absolute;
-    bottom: clamp(10px, 5vh, 40px); /* Distance fluide par rapport au bas */
+    bottom: 20px; /* Distance par rapport au bas de l'écran */
     left: 50%; /* Centre horizontalement */
     transform: translateX(-50%); /* Ajuste le centrage horizontal */
-    font-size: clamp(0.8rem, 1vw, 1.2rem); /* Taille fluide pour le texte */
+    font-size: 0.8vw; /* Taille fluide basée sur la largeur */
     font-weight: 400;
     color: white;
     text-transform: uppercase;
     letter-spacing: 0.05em;
+    text-align: center; /* Centre le texte */
+    white-space: nowrap; /* Empêche le passage à la ligne */
 }
