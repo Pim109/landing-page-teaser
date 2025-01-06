@@ -10,11 +10,7 @@ body {
     font-family: 'Source Code Pro', monospace;
     height: 100vh;
     overflow: hidden;
-    position: relative; /* Nécessaire pour les positions absolues */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column; /* Centrage du contenu */
+    position: relative;
 }
 
 /* Conteneur pour les vidéos */
@@ -39,37 +35,39 @@ body {
 
 /* Logo centré */
 .logo {
-    position: relative; /* Nécessaire pour Safari */
-    width: clamp(17rem, 60vw, 38rem); /* Taille fluide, minimale : 17rem, maximale : 38rem */
+    position: absolute;
+    top: 50%; /* Centre verticalement */
+    left: 50%; /* Centre horizontalement */
+    transform: translate(-50%, -50%);
+    width: clamp(17rem, 60vw, 38rem); /* Taille minimale : 17rem, taille fluide, maximale : 38rem */
     height: auto; /* Conserve les proportions */
     z-index: 2; /* Assure que le logo reste au-dessus de la vidéo */
-    margin-bottom: 20px; /* Espacement pour la tagline */
 }
 
 /* Texte en pied de page */
 .tagline {
-    position: relative; /* Nécessaire pour Safari */
+    position: absolute;
+    bottom: 40px; /* Distance par rapport au bas */
+    left: 50%; /* Centre horizontalement */
+    transform: translateX(-50%); /* Ajuste le centrage horizontal */
     font-size: clamp(0.8rem, 1vw, 1rem); /* Taille fluide et contrôlée */
     font-weight: 400;
     color: white;
     text-transform: uppercase;
     letter-spacing: 0.05em;
-    text-align: center; /* Centre le texte */
+    text-align: center;
     white-space: nowrap; /* Empêche le texte de passer à la ligne */
     max-width: calc(100% - 40px); /* Limite la largeur */
-    z-index: 3; /* Assure que la tagline est au-dessus de tout */
-    visibility: visible; /* S’assure que la tagline est affichée */
-    opacity: 1; /* Rend la tagline entièrement visible */
-    display: block; /* S’assure que la tagline est affichée */
+    z-index: 10; /* S’assure que la tagline est au-dessus de tout */
+    visibility: visible; /* Forcer la visibilité */
+    opacity: 1; /* S’assure qu'elle est entièrement visible */
+    display: block; /* S’assure qu'elle est affichée */
 }
 
 /* Ajustements spécifiques pour mobile */
 @media (max-width: 768px) {
-    .logo {
-        width: 17rem; /* Taille fixe pour mobile */
-    }
     .tagline {
+        bottom: 30px; /* Réduit légèrement la marge en bas */
         font-size: clamp(0.7rem, 1vw, 0.9rem); /* Ajuste la taille sur mobile */
-        margin-bottom: 10px; /* Réduit légèrement l'espacement en bas */
     }
 }
