@@ -10,12 +10,10 @@ body {
     font-family: 'Source Code Pro', monospace;
     height: 100vh;
     overflow: hidden;
-    position: relative;
+    position: relative; /* Nécessaire pour les positions absolues */
     display: flex;
-    flex-direction: column;
-    justify-content: space-between; /* Espace entre les éléments */
+    justify-content: center;
     align-items: center;
-    text-align: center;
 }
 
 /* Conteneur pour les vidéos */
@@ -42,5 +40,31 @@ body {
     top: 50%; /* Centre verticalement */
     left: 50%; /* Centre horizontalement */
     transform: translate(-50%, -50%); /* Ajuste le centrage */
-    width: 25vw; /* Taille desktop : 25% de la largeur de l'écran */
-    height: auto; /
+    width: 25vw; /* Desktop : 25% de la largeur de l'écran */
+    height: auto; /* Conserve les proportions */
+}
+
+/* Texte en pied de page */
+.tagline {
+    position: absolute;
+    bottom: 20px; /* Distance par rapport au bas de l'écran */
+    left: 50%; /* Centre horizontalement */
+    transform: translateX(-50%); /* Ajuste le centrage horizontal */
+    font-size: 1.5rem; /* Taille par défaut */
+    font-weight: 400;
+    color: white;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+}
+
+/* Responsive Design pour mobile */
+@media (max-width: 768px) {
+    .logo {
+        width: 50vw; /* Mobile : 50% de la largeur de l'écran */
+        height: auto; /* Conserve les proportions */
+    }
+    .tagline {
+        font-size: 1rem; /* Réduit la taille du texte */
+        bottom: 15px; /* Réduit l'espace en bas */
+    }
+}
